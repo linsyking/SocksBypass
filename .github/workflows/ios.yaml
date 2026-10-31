@@ -1,0 +1,20 @@
+
+name: Build iOS IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: Jeho974/ipa-build-template/.github/workflows/build-unsigned-ipa.yml@main
+    permissions:
+      contents: write
+    with:
+      kind: xcode
+      project_dir: .
+      project: SocksBypass.xcodeproj
+      scheme: SocksBypass
+      app_name: SocksBypass
